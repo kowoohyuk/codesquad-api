@@ -1,0 +1,20 @@
+{
+  "name": "codesquad-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "heroku-dotenv": "^0.4.1",
+    "mongoose": "^5.12.3"
+  }
+}
