@@ -4,6 +4,22 @@
 
 ## todo
 
+### schema
+
+```json
+{
+  "color": "#000000", // 폰트 색상 (미사용)
+  "bg_color": "#ffffff", // 배경 색상 (미사용)
+  "_id": "606bd0c6778dac93fcfc0743", // 아이디 (수정, 삭제)
+  "title": "first todo", // 제목
+  "state": 0, // 0 : Done, 1 : To Do, 2 : Doing, 3 : 삭제
+  "author": "json", // 작성자
+  "content": "blabla", // 내용
+  "created_at": "2021-04-06T05:47:11.254Z", // 작성일
+  "updated_at": "2021-04-06T05:47:11.254Z", // 수정일
+},
+```
+
 ### 1. get
 
 **path**
