@@ -12,7 +12,7 @@
   "bg_color": "#ffffff", // 배경 색상 (미사용)
   "_id": "606bd0c6778dac93fcfc0743", // 아이디 (수정, 삭제)
   "title": "first todo", // 제목
-  "state": 0, // 0 : Done, 1 : To Do, 2 : Doing, 3 : 삭제
+  "state": "0", // "0" : Done, "1" : To Do, "2" : Doing, "3" : 삭제
   "author": "json", // 작성자
   "content": "blabla", // 내용
   "created_at": "2021-04-06T05:47:11.254Z", // 작성일
@@ -63,7 +63,7 @@
 ```json
 {
   "title": "sec todo",
-  "state": 0,
+  "state": "0",
   "author": "json",
   "content": "안녕하세요!",
   "color": "#000000",
