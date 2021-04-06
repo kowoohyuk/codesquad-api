@@ -10,7 +10,7 @@
 
 > https://codesquad-2021-api.herokuapp.com/todo/:author
 
-**body json**
+**body**
 
 ```json
 없음
@@ -88,7 +88,7 @@
 
 > https://codesquad-2021-api.herokuapp.com/todo/:author/:id
 
-**body json**
+**body**
 
 ```json
 없음
