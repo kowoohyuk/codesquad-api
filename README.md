@@ -8,7 +8,7 @@
 
 **path**
 
-> /todo/:author
+> https://codesquad-2021-api.herokuapp.com/todo/:author
 
 **body json**
 
@@ -40,7 +40,7 @@
 
 **path**
 
-> /todo
+> https://codesquad-2021-api.herokuapp.com/todo
 
 **body**
 
@@ -65,7 +65,7 @@
 
 **path**
 
-> /todo/:author/:id
+> https://codesquad-2021-api.herokuapp.com/todo/:author/:id
 
 **body**
 
@@ -86,7 +86,7 @@
 
 **path**
 
-> /todo/:author/:id
+> https://codesquad-2021-api.herokuapp.com/todo/:author/:id
 
 **body json**
 
