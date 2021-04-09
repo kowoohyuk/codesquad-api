@@ -6,7 +6,7 @@
 
 ### schema
 
-```json
+```javascript
 {
   "color": "#000000", // 폰트 색상 (미사용)
   "bg_color": "#ffffff", // 배경 색상 (미사용)
