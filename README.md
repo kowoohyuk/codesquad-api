@@ -1,147 +1,36 @@
-# Codesquad-api
-
-> 2021
-
-## todo v1
-
-### schema
-
-```json
-{
-  "color": "#000000", // 폰트 색상 (미사용)
-  "bg_color": "#ffffff", // 배경 색상 (미사용)
-  "_id": "606bd0c6778dac93fcfc0743", // 아이디 (수정, 삭제)
-  "title": "first todo", // 제목
-  "state": "0", // "0" : Done, "1" : To Do, "2" : Doing, "3" : 삭제
-  "author": "json", // 작성자
-  "content": "blabla", // 내용
-  "created_at": "2021-04-06T05:47:11.254Z", // 작성일
-  "updated_at": "2021-04-06T05:47:11.254Z", // 수정일
-},
-```
-
-### 1. get
-
-**path**
-
-> https://codesquad-2021-api.herokuapp.com/todo/:author
-
-**body**
-
-```json
-없음
-```
-
-**result**
-
-```
-[
-  {
-    color: "#333",
-    bg_color: "#ffffff",
-    _id: "606bccdb9612248c0c14b157",
-    title: "first todo",
-    state: "3",
-    author: "json",
-    content: "blabla",
-    created_at: "2021-04-06T02:52:11.252Z",
-    updated_at: "2021-04-06T03:09:31.730Z",
-    __v: 0
-  },
-  ...
-]
-```
-
-### 2. post
-
-**path**
-
-> https://codesquad-2021-api.herokuapp.com/todo
-
-**body**
-
-```json
-{
-  "title": "sec todo",
-  "state": "0",
-  "author": "json",
-  "content": "안녕하세요!",
-  "color": "#000000",
-  "bg_color": "#ffffff"
-}
-```
-
-**result**
-
-```json
-{ "id": "606bd82860adcb424ccd22c3" }
-```
-
-### 3. put
-
-**path**
-
-> https://codesquad-2021-api.herokuapp.com/todo/:author/:id
-
-**body**
-
-```json
-{
-  "title": "sec todo",
-  "state": "0"
-}
-```
-
-**result**
-
-```
-수정 성공!
-```
-
-### 4. delete
-
-**path**
-
-> https://codesquad-2021-api.herokuapp.com/todo/:author/:id
-
-**body**
-
-```json
-없음
-```
-
-**result**
-
-```
-삭제 성공!
-```
-
----
-
 ## todo v2
 
 ### schema
 
-```json
+```javascript
+// 필수
 {
+  "author": "json", // 작성자
+  "todoColumns": [] // 자유로운 양식!
+}
+```
+
+```javascript
+// todoColumn 예시
+{
+  "title": "first todo",
+  "todoItems": [],
   "color": "#000000", // 폰트 색상 (미사용)
   "bg_color": "#ffffff", // 배경 색상 (미사용)
-  "_id": "606bd0c6778dac93fcfc0743", // 아이디 (수정, 삭제)
-  "title": "first todo", // 제목
-  "state": "0", // "0": 삭제, "1": 출력
-  "author": "json", // 작성자
-  "content": "blabla", // 내용
-  "column": "columnIndex",
-  "created_at": "2021-04-06T05:47:11.254Z", // 작성일
-  "updated_at": "2021-04-06T05:47:11.254Z", // 수정일
-},
+}
+
+// todoItem 예시
+{
+  title: "todo 이벤트 만들기",
+  content: "3!4!",
+}
 ```
 
 ### 1. get
 
 **path**
 
-> https://codesquad-2021-api.herokuapp.com/todo/:author
+> https://codesquad-2021-api.herokuapp.com/todo/v2/:author
 
 **body**
 
@@ -152,24 +41,76 @@
 **result**
 
 ```
-[
-  {
-    color: "#333",
-    bg_color: "#ffffff",
-    _id: "606bccdb9612248c0c14b157",
-    title: "first todo",
-    state: "3",
-    author: "json",
-    content: "blabla",
-    created_at: "2021-04-06T02:52:11.252Z",
-    updated_at: "2021-04-06T03:09:31.730Z",
-    __v: 0
-  },
-  ...
-]
+{
+  "author": "luke",
+  "todoColumns": [
+    {
+      "color": "#333",
+      "bg_colo": "#ffffff",
+      "title": "해야 할 일",
+      "todoItems": [
+        {
+          "title": "설계하기",
+          "content": "스키마 및 모델링 토론",
+        },
+        {
+          "title": "정리하기",
+          "content": "Wiki 사용!",
+        },
+        // ...
+      ]
+    },
+    {
+      "color": "#333",
+      "bg_color": "red",
+      "title": "first todo",
+      "todoItems": [
+        // ...
+      ]
+    },
+    // ...
+  ]
+}
 ```
 
 ### 2. post
+
+**path**
+
+> https://codesquad-2021-api.herokuapp.com/todo/v2
+
+**body**
+
+```javascript
+{
+  "author": "eamon",
+  // 새로운 column이나 item 추가 시 id값을 전달하지 않으면 새로운 document가 생성됩니다.
+  "id": "607400468c55b820600363f5",
+  "todoColumns": [
+    {
+      "color": "#333",
+      "bg_colo": "#ffffff",
+      "title": "끝낸 일",
+      "todoItems": [
+        {
+          "title": "늦잠자기",
+          "content": "10시 직전에 일어나기",
+        },
+        // ...
+      ]
+    }
+    // ...
+  ]
+}
+```
+
+**result**
+
+```
+생성이 완료되었습니다
+```
+
+### 3. put
 
 **path**
 
@@ -177,35 +118,25 @@
 
 **body**
 
-```json
+```javascript
 {
-  "title": "sec todo",
-  "state": "0",
-  "author": "json",
-  "content": "안녕하세요!",
-  "color": "#000000",
-  "bg_color": "#ffffff"
-}
-```
-
-**result**
-
-```json
-{ "id": "606bd82860adcb424ccd22c3" }
-```
-
-### 3. put
-
-**path**
-
-> https://codesquad-2021-api.herokuapp.com/todo/:author/:id
-
-**body**
-
-```json
-{
-  "title": "sec todo",
-  "state": "0"
+  "author": "luke",
+  "id": "607400468c55b820600363f5",
+  "todoColumns": [
+    {
+      "color": "#333",
+      "bg_colo": "#ffffff",
+      "title": "끝낸 일",
+      "todoItems": [
+        {
+          "title": "늦잠자기",
+          "content": "10시 직전에 일어나기",
+        },
+        // ...
+      ]
+    }
+    // ...
+  ]
 }
 ```
 
@@ -219,12 +150,30 @@
 
 **path**
 
-> https://codesquad-2021-api.herokuapp.com/todo/:author/:id
+> https://codesquad-2021-api.herokuapp.com/todo
 
 **body**
 
 ```json
-없음
+{
+  "author": "eamon",
+  "id": "607400468c55b820600363f5",
+  "todoColumns": [
+    {
+      "color": "#333",
+      "bg_colo": "#ffffff",
+      "title": "끝낸 일",
+      "todoItems": [
+        {
+          "title": "늦잠자기",
+          "content": "10시 직전에 일어나기"
+        }
+        // ...
+      ]
+    }
+    // ...
+  ]
+}
 ```
 
 **result**
