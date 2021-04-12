@@ -27,7 +27,8 @@ todoRouter.put("/:author/:id", (req, res) => {
     { author, _id: id },
     { $set: { ...req.body } },
     function (err, todo) {
-      console.log(err, todo);
+      if (todo.n === 0)
+        return res.status(200).send("아이디 또는 작성자가 존재하지 않습니다!");
       if (err) return res.status(500).send("todo 수정 실패!");
       if (!todo) return res.status(404).send("todo가 없어요!");
       res.status(200).json("수정 성공!");
@@ -41,6 +42,8 @@ todoRouter.delete("/:author/:id", (req, res) => {
     { author, _id: id },
     { $set: { state: 3 } },
     function (err, todo) {
+      if (todo.n === 0)
+        return res.status(200).send("아이디 또는 작성자가 존재하지 않습니다!");
       if (err) return res.status(500).send("todo 삭제 실패!");
       if (!todo) return res.status(404).send("todo가 없어요!");
       res.status(200).json("삭제 성공!");
