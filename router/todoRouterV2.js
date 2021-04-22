@@ -3,7 +3,6 @@ import "../db.js";
 import { todoSchema } from "../schema/todoSchemaV2.js";
 
 export const todoRouterV2 = express.Router();
-
 todoRouterV2.get("/:author", (req, res) => {
   const { author } = req.params;
   todoSchema.find({ author, state: { $ne: 0 } }, function (err, todos) {

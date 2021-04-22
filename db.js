@@ -17,3 +17,13 @@ export default mongoose.connect(
     console.log("mongodb connected");
   }
 );
+
+/*
+  codesquad-api -> heroku
+
+  codesqaud-api -> server  |    db
+                    |      |   
+                    |      |
+                    |      |
+                   router  |
+*/
