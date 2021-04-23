@@ -9,14 +9,15 @@
 
 ```js
 {
+  _id: String, // id (unique)
   title: String, // 제목
   description: String, // 설명
   main_image: String, // 목록 또는 상세 모달의 메인 이미지
   alt: String, // 이미지 설명 (제목과 일치)
   price: Number, // 기본 가격
   discount: Number, // 할인 비율
-  label: Array, // 뱃지
-  stock: Number, // 재고, 1 ~ 5 사이
+  label: Array, // 뱃지 배열
+  stock: Number, // 재고, 1~5
   point: Number, // 적립 포인트
   thumbnail_images: Array, // 상세 모달의 썸네일 이미지 리스트
   delivery_fee: String, // 상세 모달의 배송 요금
