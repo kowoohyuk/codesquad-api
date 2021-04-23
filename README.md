@@ -1,6 +1,6 @@
 ## sidedish
 
-> get method만 사용합니다.
+> 모든 요청은 get을 사용합니다.
 
 > 상품 명과 이미지가 일치하지 않으니 주의 바랍니다...  
 > ex) 삼겹살인데 이미지가 두부...
@@ -57,6 +57,9 @@
 
 ### 요청 예시
 
+> id는 개별 상품의 _id입니다. 
+> ex) _id: "6082343989d7c10f802d4e6a",
+
 #### **best** - 베스트 리스트 전체 반환
 
 #### path - https://codesquad-2021-api.herokuapp.com/sidedish/best
@@ -71,10 +74,27 @@
 
 #### detail - 상세 모달용 디테일 반환
 
-#### path - https://codesquad-2021-api.herokuapp.com/sidedish/detail/:id
+#### path - https://codesquad-2021-api.herokuapp.com/sidedish/detail/:id  
+> ex) https://codesquad-2021-api.herokuapp.com/sidedish/detail/6082343989d7c10f802d4e6a  
 
 ---
 
 #### buy - 구매 버튼 클릭 시 구매 가능 여부 반환
 
-#### path - https://codesquad-2021-api.herokuapp.com/sidedish//buy/:id/:stock
+> 구매 가능 여부만 반환하며, 재고는 변경되지 않습니다.
+
+#### path - https://codesquad-2021-api.herokuapp.com/sidedish/buy/:id/:stock  
+> ex) https://codesquad-2021-api.herokuapp.com/sidedish/buy/6082343989d7c10f802d4e6a/3
+
+```js
+// 구매 가능
+{
+  result: true
+}
+
+// 구매 불가
+{
+  result: false,
+  message: "재고가 부족합니다!"
+}
+```
