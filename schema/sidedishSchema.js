@@ -19,7 +19,7 @@ export const sidedishDetailSchema = mongoose.model(
     hash: Number,
     title: String,
     description: String,
-    img: String,
+    main_image: String,
     alt: String,
     price: Number,
     discount: Number,
@@ -28,6 +28,7 @@ export const sidedishDetailSchema = mongoose.model(
       type: Number,
       default: 0,
     },
+    thumbnail_images: Array,
     delivery_fee: String,
     delivery_info: String,
   })
