@@ -24,6 +24,8 @@ export const sidedishDetailSchema = mongoose.model(
     price: Number,
     discount: Number,
     label: Array,
+    img: String,
+    stock: Number,
     point: {
       type: Number,
       default: 0,

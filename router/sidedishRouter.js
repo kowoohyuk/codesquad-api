@@ -33,3 +33,17 @@ sidedishRouter.get("/detail/:id", (req, res) => {
     res.status(200).json(item);
   });
 });
+
+sidedishRouter.get("/buy/:id/:stock", (req, res) => {
+  const { id, stock } = req.params;
+  sidedishDetailSchema.findOne({ _id: id }, function (err, item) {
+    const obj = {};
+    if (item.stock < stock) {
+      obj.result = false;
+      obj.message = "재고가 부족합니다!";
+    } else {
+      obj.result = true;
+    }
+    res.status(200).json(obj);
+  });
+});
