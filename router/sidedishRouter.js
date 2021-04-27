@@ -47,3 +47,21 @@ sidedishRouter.get("/buy/:id/:stock", (req, res) => {
     res.status(200).json(obj);
   });
 });
+
+// sidedishRouter.get("/updatee", (req, res) => {
+//   sidedishDetailSchema.find({}, function (err, item) {
+//     for (let i = 0; i < item.length; i++) {
+//       sidedishDetailSchema.updateOne(
+//         { _id: item[i]._id },
+//         {
+//           $set: {
+//             delivery_fee: ["2,500원", "(40,000원 이상 구매 시 무료)"],
+//           },
+//         },
+//         function (err, result) {
+//           console.log("^^");
+//         }
+//       );
+//     }
+//   });
+// });

@@ -31,7 +31,7 @@ export const sidedishDetailSchema = mongoose.model(
       default: 0,
     },
     thumbnail_images: Array,
-    delivery_fee: String,
+    delivery_fee: Array,
     delivery_info: String,
   })
 );

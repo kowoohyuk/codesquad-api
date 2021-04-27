@@ -19,7 +19,7 @@
   stock: Number, // 재고, 1 ~ 5 사이
   point: Number, // 적립 포인트
   thumbnail_images: Array, // 상세 모달의 썸네일 이미지 리스트
-  delivery_fee: String, // 상세 모달의 배송 요금
+  delivery_fee: Array, // 상세 모달의 배송 요금
   delivery_info: String // 상세 모달의 배송 정보
 }
 ```
@@ -42,7 +42,7 @@
       alt: "[삼진어묵] 부산 원조 어묵 5종",
       price: 5200,
       discount: 35,
-      delivery_fee: "2,500원 <b>(40,000원 이상 구매 시 무료)</b>",
+      delivery_fee: ["2,500원", "(40,000원 이상 구매 시 무료)"],
       delivery_info:
         "서울 경기 새벽배송 / 전국택배 (제주 및 도서산간 불가) [월 · 화 · 수 · 목 · 금 · 토] 수령 가능한 상품입니다",
       __v: 0,
