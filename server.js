@@ -21,7 +21,7 @@ app.use('/todo/v3', todoRouterV3);
 
 app.use('/sidedish', sidedishRouter);
 
-app.use('/price', airbnbRouter);
+app.use('/airbnb/price', airbnbRouter);
 
 app.listen(PORT, function () {
   console.log(`port : ${PORT} server started, used cors`);
