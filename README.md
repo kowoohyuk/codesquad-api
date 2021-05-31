@@ -3,7 +3,6 @@
 ### schema
 
 ```javascript
-// 필수
 {
   "author": "json", // 작성자
   "todoColumns": [] // 자유로운 양식!
