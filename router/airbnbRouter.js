@@ -5,7 +5,7 @@ export const airbnbRouter = express.Router();
 airbnbRouter.get('/', (req, res) => {
   const prices = getPriceList();
   const minPrice = 50000;
-  const maxPrice = prices.slice(-1);
+  const [maxPrice] = prices.slice(-1);
   res.json({
     list: prices,
     minPrice,
@@ -19,42 +19,42 @@ const getPriceList = () => {
     70000, 90000, 110000, 130000, 150000, 200000, 250000, 300000, 400000,
     500000,
   ];
-  return Array(200)
+  return Array(500)
     .fill(0)
     .map((v, i) => {
-      if (i < 20)
+      if (i < 50)
         return (
           min + parseInt((Math.random() * (sections[0] - min)) / 100) * 100
         );
-      if (i < 40)
+      if (i < 100)
         return (
           min + parseInt((Math.random() * (sections[1] - min)) / 100) * 100
         );
-      if (i < 60)
+      if (i < 150)
         return (
           min + parseInt((Math.random() * (sections[2] - min)) / 100) * 100
         );
-      if (i < 80)
+      if (i < 200)
         return (
           min + parseInt((Math.random() * (sections[3] - min)) / 100) * 100
         );
-      if (i < 100)
+      if (i < 250)
         return (
           min + parseInt((Math.random() * (sections[4] - min)) / 100) * 100
         );
-      if (i < 120)
+      if (i < 300)
         return (
           min + parseInt((Math.random() * (sections[5] - min)) / 100) * 100
         );
-      if (i < 140)
+      if (i < 350)
         return (
           min + parseInt((Math.random() * (sections[6] - min)) / 100) * 100
         );
-      if (i < 160)
+      if (i < 400)
         return (
           min + parseInt((Math.random() * (sections[7] - min)) / 100) * 100
         );
-      if (i < 180)
+      if (i < 450)
         return (
           min + parseInt((Math.random() * (sections[8] - min)) / 100) * 100
         );
